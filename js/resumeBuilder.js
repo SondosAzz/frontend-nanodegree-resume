@@ -1,4 +1,5 @@
 
+var formattedContacts2=[];
 var bio = {
    name : "Sondos",
    role : "Web Developer",
@@ -18,14 +19,15 @@ var bio = {
      $("#header").prepend(HTMLheaderRole.replace("%data%",this.role));
      $("#header").prepend(HTMLheaderName.replace("%data%",this.name));
      for(var i in bio.contacts){
-       var formattedcontacts = HTMLcontactGeneric.replace("%contact%",i).replace("%data%",this.contacts[i]);
-        $("#topContacts").append(formattedcontacts);
+        formattedContacts = HTMLcontactGeneric.replace("%contact%",i).replace("%data%",this.contacts[i]);
+        formattedContacts2.push(formattedContacts);
+        $("#topContacts").append(formattedContacts);
      }
      $("#header").append(formattedWelcomeMsg);
      $("#header").append(formattedBioPic);
      $("#header").append(HTMLskillsStart);
      for ( var i=0; i<bio.skills.length;i++){
-       var formattedSkills = HTMLskills.replace("%data%", this.skills[i]);
+      var formattedSkills = HTMLskills.replace("%data%", this.skills[i]);
        console.log(bio.skills[i]);
         $("#header").append(formattedSkills);
      }
@@ -44,7 +46,7 @@ var education = {
   },
   {
     name: "New Horizon",
-    location: "Yokohama",
+    location: "Yokohama, Japan",
     degree: "Bachelor Science",
     majors:["Art","PSY"],
     dates: "2010-2012",
@@ -166,7 +168,18 @@ var projects = {
   }
 };
 
+function displayMap(){
+  $("#mapDiv").append(googleMap);
+}
+function displayFooter(){
+
+     $("#footerContacts").append(formattedContacts2);
+
+}
+//Display All Sections
 bio.display();
 work.display();
 projects.display();
 education.display();
+displayMap();
+displayFooter();
