@@ -159,7 +159,7 @@ var projects = {
 			$("#projects").append(formattedDes);
 			for (var i = 0; i < proj.images.length; i++) {
 				var formattedImages = HTMLprojectImage.replace("%data%", proj.images[i]);
-				$("#projects").append(formattedImages)
+				$("#projects").append(formattedImages);
 			}
 		});
 	}
