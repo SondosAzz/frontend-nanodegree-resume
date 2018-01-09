@@ -228,5 +228,8 @@ span {
 
 li {
   list-style: none;
-
+}
+.map-title {
+  padding-left: 10px ;
+  margin-left: 50px;
 }
