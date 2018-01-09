@@ -26,7 +26,7 @@ var bio = {
 		$("#header").append(formattedWelcomeMsg);
 		$("#header").append(formattedBioPic);
 		$("#header").append(HTMLskillsStart);
-		for (var i = 0; i < bio.skills.length; i++) {
+		for ( i = 0; i < bio.skills.length; i++) {
 			var formattedSkills = HTMLskills.replace("%data%", this.skills[i]);
 			console.log(bio.skills[i]);
 			$("#header").append(formattedSkills);
@@ -157,7 +157,7 @@ var projects = {
 			$("#projects").append(formattedTitle);
 			$("#projects").append(formatteddates);
 			$("#projects").append(formattedDes);
-			for (var i = 0; i < proj.images.length; i++) {
+			for ( i = 0; i < proj.images.length; i++) {
 				var formattedImages = HTMLprojectImage.replace("%data%", proj.images[i]);
 				$("#projects").append(formattedImages);
 			}
